@@ -14,10 +14,14 @@
         background-color: #f8f9fa;
     }
     #locationDetails {
+        text-align: center;
         padding: 20px;
         background-color: #007bff;
         color: #fff;
         border-radius: 5px;
+    }
+    #locationDetails p {
+        margin: 10px 0;
     }
 </style>
 </head>
@@ -28,6 +32,7 @@
         .then(response => response.json())
         .then(data => {
             document.getElementById('locationDetails').innerHTML = `
+                <p>IP Address: ${data.ip}</p>
                 <p>City: ${data.city}</p>
                 <p>Region: ${data.region}</p>
                 <p>Country: ${data.country_name}</p>
